@@ -1,0 +1,24 @@
+name: projectappflutter
+description: A new Flutter project
+
+publish_to: 'none' # ลบบรรทัดนี้ถ้าคุณไม่ต้องการเผยแพร่แพ็กเกจ
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.2
+  location: ^4.3.0
+  connectivity_plus: ^3.0.0
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

@@ -1,0 +1,32 @@
+// ปรับเวอร์ชัน AGP ให้ตรงกับที่รองรับการใช้งาน `namespace`
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.0'  // AGP 7.0 หรือสูงกว่า
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21'  // เวอร์ชันของ Kotlin Plugin
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+
